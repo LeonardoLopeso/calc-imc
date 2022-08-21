@@ -2,6 +2,9 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
+.main {
+  padding-bottom: 50px;
+}
 .headerContainer {
   max-width: 900px;
   margin: 40px auto;
@@ -34,6 +37,9 @@ body {
   font-size: 14px;
   outline: 0;
 }
+.container .leftside input:disabled {
+  opacity: .5;
+}
 .container .leftside button {
   background-color: #227C9D;
   color: #FFF;
@@ -48,6 +54,9 @@ body {
 }
 .container .leftside button:hover {
   opacity: .8;
+}
+.container .leftside button:disabled {
+  opacity: .5;
 }
 
 
@@ -65,4 +74,50 @@ body {
 .container .rightside .rightBig {
   flex: 1;
   display: flex;
+}
+.container .rightside .rightArrow {
+  position: absolute;
+  background-color: #227C9D;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-left: -35px;
+  margin-top: 145px;
+  transition: all ease .3s;
+  box-shadow: 8px 0px 15px rgba(0, 0, 0, .5);
+}
+.container .rightside .rightArrow:hover {
+  opacity: .9;
+}
+
+@media (max-width: 770px) {
+  header {
+    padding: 0 20px;
+  }
+  .container {
+    padding: 0 20px;
+    flex-direction: column;
+  }
+  .container .leftside {
+    margin-right: 0;
+  }
+  .container .rightside {
+    margin-left: 0;
+    margin-top: 50px;
+  }
+  .container .rightside .rightArrow {
+    margin-left: 0;
+    margin-top: 0;
+    border-radius: 10px
+  }
+}
+
+@media (max-width: 430px) {
+  .container .rightside .grid {
+    grid-template-columns: 1fr;
+  }
 }
